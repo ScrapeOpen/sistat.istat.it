@@ -1,0 +1,4 @@
+*.log
+*.sqlite
+*.csv
+_old_update_comune_all_variations.py
