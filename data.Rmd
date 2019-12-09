@@ -1,0 +1,196 @@
+---
+title: "Data"
+output: github_document
+---
+
+```{r, echo=FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+require(knitr)
+setwd('/Users/francesco/public_git/ScrapeOpen/sistat.istat.it/')
+csv_files <- list.files(pattern = "csv$")
+```
+
+This document describes the tables produced from scraping *comune* variations from sistat.istat.it.
+
+```{r}
+version <- "20190601"
+```
+
+
+## Variables
+
+* `sistat_id`: a *comune* unique ID within the dataset
+* `?(*_)istat_cod`: reference to *comune* the ISTAT code.
+* `event_num`: the unique ID of an event within the dataset.
+
+## Tables
+
+### Comuni
+
+This table contains one record for each *comune* describes in the dataset.
+
+```{r}
+filename <- sprintf("open_csv_%s_comuni.csv", version)
+dat <- read.csv(filename)
+```
+
+* file name: ``r filename``
+* records: `r nrow(dat)`
+* data example:
+
+```{r}
+kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
+```
+
+### Comuni variations
+
+This table contains one record for each variation associated with a *comune*. A *comune* with no variation is not present in this table (I think...).
+
+```{r}
+filename <- sprintf("open_csv_%s_comuni_variations.csv", version)
+dat <- read.csv(filename)
+```
+
+* file name: ``r filename``
+* records: `r nrow(dat)`
+* data example:
+
+```{r}
+kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
+```
+
+### Events
+
+This table details the variation events and the scope of the variation events described in the dataset.
+
+```{r}
+filename <- sprintf("open_csv_%s_events.csv", version)
+dat <- read.csv(filename)
+```
+
+* file name: ``r filename``
+* records: `r nrow(dat)`
+* data example:
+
+```{r}
+kable(dat[sample(1:nrow(dat), 3),], row.names = FALSE)
+```
+
+### Event: change code
+
+This table details variations in the ISTAT code.
+
+```{r}
+filename <- sprintf("open_csv_%s_event_change_code.csv", version)
+dat <- read.csv(filename)
+```
+
+* file name: ``r filename``
+* records: `r nrow(dat)`
+* data example:
+
+```{r}
+kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
+```
+
+### Event: change name
+
+This table details variations in the name. 
+
+```{r}
+filename <- sprintf("open_csv_%s_event_change_name.csv", version)
+dat <- read.csv(filename)
+```
+
+* file name: ``r filename``
+* records: `r nrow(dat)`
+* data example:
+
+```{r}
+kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
+```
+
+### Event: change part of
+
+This table details variations in hierarchical relations (when a *comune* change provice).
+
+```{r}
+filename <- sprintf("open_csv_%s_event_change_part_of.csv", version)
+dat <- read.csv(filename)
+```
+
+* file name: ``r filename``
+* records: `r nrow(dat)`
+* data example:
+
+```{r}
+kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
+```
+
+### Event: event creation
+
+This table details the creation event.
+
+```{r}
+filename <- sprintf("open_csv_%s_event_creation.csv", version)
+dat <- read.csv(filename)
+```
+
+* file name: ``r filename``
+* records: `r nrow(dat)`
+* data example:
+
+```{r}
+kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
+```
+
+### Event: event extinction
+
+This table details the extinction event.
+
+```{r}
+filename <- sprintf("open_csv_%s_event_extinction.csv", version)
+dat <- read.csv(filename)
+```
+
+* file name: ``r filename``
+* records: `r nrow(dat)`
+* data example:
+
+```{r}
+kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
+```
+
+### Event: territory acquisition
+
+This table details the acquisition of territory.
+
+```{r}
+filename <- sprintf("open_csv_%s_event_territory_acquisition.csv", version)
+dat <- read.csv(filename)
+```
+
+* file name: ``r filename``
+* records: `r nrow(dat)`
+* data example:
+
+```{r}
+kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
+```
+
+### Event: territory acquisition
+
+This table details the cession of territory.
+
+```{r}
+filename <- sprintf("open_csv_%s_event_territory_cession.csv", version)
+dat <- read.csv(filename)
+```
+
+* file name: ``r filename``
+* records: `r nrow(dat)`
+* data example:
+
+```{r}
+kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
+```
