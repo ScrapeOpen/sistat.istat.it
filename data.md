@@ -4,6 +4,13 @@ Data
 This document describes the tables produced from scraping *comune*
 variations from sistat.istat.it.
 
+## Variables
+
+  - `sistat_id`: a *comune* unique ID within the dataset
+  - `?(*_)istat_cod`: reference to the *comune* ISTAT code.
+  - `event_num`: the unique ID of an event within the dataset.
+  - `event_type`: the type of event.
+
 ## Tables
 
 ### Comuni
@@ -15,13 +22,13 @@ dataset.
   - records: 10331
   - data example:
 
-| sistat\_id | last\_name                | last\_istat\_cod |
-| ---------: | :------------------------ | ---------------: |
-|      11558 | Figline e Incisa Valdarno |            48052 |
-|      11483 | Lieto Colle               |            13891 |
-|        612 | Re                        |           103060 |
-|       1085 | Dernice                   |             6066 |
-|        650 | Acceglio                  |             4001 |
+| sistat\_id | last\_name       | last\_istat\_cod |
+| ---------: | :--------------- | ---------------: |
+|       1412 | Tovo San Giacomo |             9062 |
+|       2460 | Vercurago        |            97086 |
+|       1162 | Ricaldone        |             6143 |
+|      10967 | Morter/Morter    |            21858 |
+|       8179 | Vajont           |            93052 |
 
 ### Comuni variations
 
@@ -33,13 +40,26 @@ think…).
   - records: 23075
   - data example:
 
-| sistat\_id | event\_num | event\_type            | event\_date | event\_validity\_from |
-| ---------: | ---------: | :--------------------- | :---------- | :-------------------- |
-|       4026 |        300 | change\_code           | 1968-03-01  | 1968-04-06            |
-|       5392 |       5092 | territory\_acquisition | 1935-03-07  | 1935-04-18            |
-|       1909 |        367 | territory\_acquisition | 1999-07-07  | 1999-07-27            |
-|       4276 |       4673 | territory\_acquisition | 1943-04-14  | 1943-05-29            |
-|       5481 |       5128 | territory\_acquisition | 1948-04-21  | 1948-08-11            |
+| sistat\_id | event\_num | event\_type        | event\_date | event\_validity\_from |
+| ---------: | ---------: | :----------------- | :---------- | :-------------------- |
+|         17 |       2364 | creation           | 1946-11-22  | 1947-01-10            |
+|      10237 |       3786 | extinction         | 1874-11-02  | NA                    |
+|       7953 |        575 | change\_part\_of   | 2001-07-12  | 2006-01-01            |
+|       4277 |       4578 | territory\_cession | 1870-05-01  | 1870-07-01            |
+|      11051 |       2767 | change\_part\_of   | 1927-01-02  | 1927-01-12            |
+
+  - event types:
+
+| event\_type            |    n |
+| :--------------------- | ---: |
+| annexation             | 1907 |
+| change\_code           |  321 |
+| change\_name           | 2747 |
+| change\_part\_of       | 5017 |
+| creation               | 3578 |
+| extinction             | 3384 |
+| territory\_acquisition | 4003 |
+| territory\_cession     | 2118 |
 
 ### Events
 
@@ -50,11 +70,11 @@ events described in the dataset.
   - records: 8677
   - data example:
 
-| event\_num | event\_act   | event\_date | event\_description                                                                                                                   | event\_validity\_from | event\_validity\_to |
-| ---------: | :----------- | :---------- | :----------------------------------------------------------------------------------------------------------------------------------- | :-------------------- | :------------------ |
-|       2997 | R.D. N. 2476 | 1927-12-11  | AGGREGATO AL COMUNE DI NAVE IL TERRITORIO DEL SOPPRESSO COMUNE DI CAINO IN PROVINCIA DI BRESCIA                                      | NA                    | 1928-01-22          |
-|       3936 | R.D. N. 1172 | 1928-05-06  | AGGREGATI AL COMUNE DI VIGO RENDENA I TERRITORI DEI SOPPRESSI COMUNI DI DARÈ E PELUGO IN PROVINCIA DI TRENTO                         | 1928-06-27            | 1946-12-19          |
-|       5875 | L.R. n. 10   | 1958-06-11  | NUOVO COMUNE DI TRINITA’ D’AGULTO E VIGNOLA COSTITUITO CON LE FRAZIONI OMONIME STACCATE DAL COMUNE DI AGGIUS IN PROVINCIA DI SASSARI | 1958-08-12            | 2006-01-01          |
+| event\_num | event\_act   | event\_date | event\_description                                                                                                                                      | event\_validity\_from | event\_validity\_to |
+| ---------: | :----------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------- | :------------------ |
+|       5959 | L.R. N. 67   | 2013-11-22  | NUOVO COMUNE DI SCARPERIA E SAN PIERO COSTITUITO MEDIANTE FUSIONE DEI COMUNI DI SCARPERIA E SAN PIERO A SIEVE IN PROVINCIA DI FIRENZE                   | NA                    | 2014-01-01          |
+|       4016 | R.D. N. 1384 | 1931-10-15  | NUOVO COMUNE DI VAL DI VIZZE/PFITSCHVIENE COSTITUITO CON I TERRITORI DEI SOPPRESSI COMUNI DI VIZZE/PFITSCH E PRATI/WIESEN IN PROVINCIA DI BOLZANO/BOZEN | 1927-01-12            | 1931-12-06          |
+|       5164 | R.D. N. 840  | 1912-07-18  | NUOVA DENOMINAZIONE CAPPELLE SUL TAVO ASSUNTA DAL COMUNE DI CAPPELLE IN PROVINCIA DI TERAMO                                                             | 1912-08-24            | 1927-01-12          |
 
 ### Event: change code
 
@@ -66,27 +86,27 @@ This table details variations in the ISTAT code.
 
 | sistat\_id | event\_num | event\_old\_istat\_cod | event\_new\_istat\_cod |
 | ---------: | ---------: | ---------------------: | ---------------------: |
-|       7961 |        302 |                  92097 |                  92054 |
-|       4078 |        300 |                  30095 |                  30067 |
-|       6461 |        301 |                  70084 |                  70051 |
-|       8018 |        302 |                  92154 |                  92091 |
-|       6440 |        301 |                  70063 |                  70037 |
+|       4143 |        300 |                  30160 |                  30116 |
+|       8022 |        302 |                  92158 |                  92095 |
+|       4075 |        300 |                  30092 |                  30064 |
+|       4063 |        300 |                  30080 |                  30055 |
+|       4105 |        300 |                  30122 |                  30087 |
 
 ### Event: change name
 
 This table details variations in the name.
 
   - file name: `open_csv_20190601_event_change_name.csv`
-  - records: 2741
+  - records: 2747
   - data example:
 
-| sistat\_id | event\_num | event\_new\_name | event\_old\_name     |
-| ---------: | ---------: | :--------------- | :------------------- |
-|       3781 |       4173 | Vittorio         | Vittorio Veneto      |
-|      11091 |       3875 | Scale/Schalders  | Scaleres/Schalders   |
-|       7000 |       4999 | Roseto           | Rosito Capo Spulico  |
-|       3930 |       3630 | Villafranca      | Villafranca Padovana |
-|       5308 |       4987 | Camerata         | Camerata Nuova       |
+| sistat\_id | event\_num | event\_new\_name       | event\_old\_name     |
+| ---------: | ---------: | :--------------------- | :------------------- |
+|      10857 |       3541 | Virle                  | Virle Treponti       |
+|       2184 |       2664 | San Zenone             | San Zenone al Lambro |
+|         64 |       2757 | Castagneto             | Castagneto Po        |
+|       5555 |       5339 | Castello di Campagnano | Castel Campagnano    |
+|       1280 |       2931 | Valtornenza            | Valtournanche        |
 
 ### Event: change part of
 
@@ -94,77 +114,222 @@ This table details variations in hierarchical relations (when a *comune*
 change provice).
 
   - file name: `open_csv_20190601_event_change_part_of.csv`
-  - records: 4996
+  - records: 5017
   - data example:
 
-| sistat\_id | event\_num | event\_new\_istat\_cod | event\_new\_province | event\_old\_istat\_cod | event\_old\_province |
-| ---------: | ---------: | ---------------------: | :------------------- | ---------------------: | :------------------- |
-|       3395 |       4170 |                  22222 | Trento               |                 802876 | \-                   |
-|       7854 |        624 |                  95088 | Oristano             |                  91092 | Nuoro                |
-|       8021 |        575 |                 107022 | \-                   |                  92094 | \-                   |
-|      11316 |       4303 |                  30947 | Udine                |                 801257 | \-                   |
-|       6402 |        301 |                  94010 | Isernia              |                  70025 | Campobasso           |
+| sistat\_id | event\_num | event\_new\_istat\_cod | event\_new\_province           | event\_old\_istat\_cod | event\_old\_province |
+| ---------: | ---------: | ---------------------: | :----------------------------- | ---------------------: | :------------------- |
+|       7114 |        310 |                 102018 | Vibo Valentia                  |                  79066 | Catanzaro            |
+|        164 |       6029 |                   1164 | Città metropolitana di Torino  |                   1164 | \-                   |
+|       3789 |       6029 |                  27005 | Città metropolitana di Venezia |                  27005 | \-                   |
+|       5758 |       6029 |                  63049 | Città metropolitana di Napoli  |                  63049 | \-                   |
+|       2162 |        615 |                 108037 | Monza e della Brianza          |                  15180 | \-                   |
 
 ### Event: event creation
 
 This table details the creation event.
 
   - file name: `open_csv_20190601_event_creation.csv`
-  - records: 4248
+  - records: 4262
   - data example:
 
-| sistat\_id | event\_num | event\_from\_name | event\_from\_istat\_cod | event\_from\_area | event\_from\_population | event\_from\_extinction\_flag |
-| ---------: | ---------: | :---------------- | ----------------------: | :---------------- | :---------------------- | :---------------------------- |
-|       7869 |       5815 | Oristano          |                   92080 | NON DOCUMENTATA   | NON DOCUMENTATA         | N                             |
-|       3695 |       4252 | Montebelluna      |                   26046 | NON DOCUMENTATA   | NON DOCUMENTATA         | N                             |
-|       8008 |       5867 | Milis             |                   92062 | NON DOCUMENTATA   | NON DOCUMENTATA         | N                             |
-|       3781 |       4115 | Serravalle        |                   26807 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
-|       1852 |       3022 | Verna             |                   13954 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
+| sistat\_id | event\_num | event\_from\_name       | event\_from\_istat\_cod | event\_from\_area | event\_from\_population | event\_from\_extinction\_flag |
+| ---------: | ---------: | :---------------------- | ----------------------: | :---------------- | :---------------------- | :---------------------------- |
+|       4174 |       4294 | \-                      |                      NA | NON DOCUMENTATA   | NON DOCUMENTATA         |                               |
+|       3434 |       3619 | \-                      |                      NA | NON DOCUMENTATA   | NON DOCUMENTATA         |                               |
+|       7486 |       5693 | Sant’Agata di Militello |                   83084 | NON DOCUMENTATA   | NON DOCUMENTATA         | N                             |
+|       8249 |        359 | Scandeluzza             |                    5102 | 599               | 250                     | S                             |
+|       1115 |       2927 | Molino Alzano           |                    6813 | 274               | 891                     | S                             |
 
 ### Event: event extinction
 
 This table details the extinction event.
 
   - file name: `open_csv_20190601_event_extinction.csv`
-  - records: 3569
+  - records: 3585
   - data example:
 
-| sistat\_id | event\_num | event\_to\_name               | event\_to\_istat\_cod | event\_to\_area | event\_to\_population | event\_to\_creation\_flag |
-| ---------: | ---------: | :---------------------------- | --------------------: | :-------------- | :-------------------- | :------------------------ |
-|      11077 |       4008 | Chiusa/Klausen                |                 21022 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
-|       8201 |       5777 | Ghilarza                      |                 92045 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
-|       1654 |       3113 | Venegono                      |                 12899 | 577             | 3127                  | S                         |
-|        198 |       2857 | Perosa Argentina              |                  1184 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
-|      10659 |       3639 | Corte de’ Cortesi con Cignone |                 19032 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
+| sistat\_id | event\_num | event\_to\_name | event\_to\_istat\_cod | event\_to\_area | event\_to\_population | event\_to\_creation\_flag |
+| ---------: | ---------: | :-------------- | --------------------: | :-------------- | :-------------------- | :------------------------ |
+|       9869 |       2535 | Varallo         |                  2156 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
+|       6852 |       5505 | Chiaromonte     |                 76028 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
+|       3218 |       3910 | Condino         |                 22066 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
+|       2652 |       3372 | Valsaviore      |                 17906 | 8241            | 2265                  | S                         |
+|      11408 |       4308 | Primano         |                701712 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
 
 ### Event: territory acquisition
 
 This table details the acquisition of territory.
 
   - file name: `open_csv_20190601_event_territory_acquisition.csv`
-  - records: 5797
+  - records: 5828
   - data example:
 
-| sistat\_id | event\_num | event\_from\_name   | event\_from\_istat\_cod | event\_from\_area | event\_from\_population | event\_from\_extinction\_flag |
-| ---------: | ---------: | :------------------ | ----------------------: | :---------------- | :---------------------- | :---------------------------- |
-|       6671 |       5460 | Francavilla Fontana |                   75812 | 3458              | 6546                    | N                             |
-|        431 |       2559 | Villa del Bosco     |                    2161 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
-|       4026 |       5933 | Basiliano           |                   30009 | NON DOCUMENTATA   | NON DOCUMENTATA         | N                             |
-|        452 |       2774 | Piane Sesia         |                    2824 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
-|       1174 |       2507 | Gremiasco           |                    6083 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
+| sistat\_id | event\_num | event\_from\_name | event\_from\_istat\_cod | event\_from\_area | event\_from\_population | event\_from\_extinction\_flag |
+| ---------: | ---------: | :---------------- | ----------------------: | :---------------- | :---------------------- | :---------------------------- |
+|       5758 |       5322 | Pozzuoli          |                   63060 | NON DOCUMENTATA   | NON DOCUMENTATA         | N                             |
+|       5755 |       5398 | Sorrento          |                   63080 | NON DOCUMENTATA   | NON DOCUMENTATA         |                               |
+|      11465 |       5326 | Vitulazio         |                   63899 | 2272              | 3328                    | S                             |
+|       4180 |       4301 | Corona            |                   31802 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
+|       1444 |       4480 | Nervi             |                   10812 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
 
-### Event: territory acquisition
+### Event: territory cession
 
 This table details the cession of territory.
 
   - file name: `open_csv_20190601_event_territory_cession.csv`
-  - records: 2363
+  - records: 2368
   - data example:
 
-| sistat\_id | event\_num | event\_to\_name  | event\_to\_istat\_cod | event\_to\_area | event\_to\_population | event\_to\_creation\_flag |
-| ---------: | ---------: | :--------------- | --------------------: | :-------------- | :-------------------- | :------------------------ |
-|       7057 |       6051 | Petronà          |                 79095 | 23              | 82                    | N                         |
-|        684 |       2498 | Gottasecca       |                  4098 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
-|       3112 |       4064 | Andriano/Andrian |                 21002 | NON DOCUMENTATA | NON DOCUMENTATA       | S                         |
-|        107 |       2742 | Levone           |                  1133 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
-|       6124 |       5208 | Lucoli           |                 66052 | NON DOCUMENTATA | NON DOCUMENTATA       | S                         |
+| sistat\_id | event\_num | event\_to\_name | event\_to\_istat\_cod | event\_to\_area | event\_to\_population | event\_to\_creation\_flag |
+| ---------: | ---------: | :-------------- | --------------------: | :-------------- | :-------------------- | :------------------------ |
+|       1346 |       4479 | Soldano         |                  8058 | NON DOCUMENTATA | NON DOCUMENTATA       | S                         |
+|       7881 |       5853 | Las Plassas     |                 92056 | NON DOCUMENTATA | NON DOCUMENTATA       | S                         |
+|       6377 |       5207 | Buonanotte      |                 69009 | NON DOCUMENTATA | NON DOCUMENTATA       | S                         |
+|       3390 |       4052 | Soraga          |                 22176 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
+|       7311 |       5617 | Custonaci       |                 81007 | 6961            | 4410                  | S                         |
+
+## Data schema and integrity
+
+#### `open_csv_20190601_comuni_variations.csv` – `open_csv_20190601_events.csv`
+
+Every variation event contained in
+`open_csv_20190601_comuni_variations.csv` is described in
+`open_csv_20190601_events.csv`.
+
+``` r
+filename <- sprintf("open_csv_%s_comuni_variations.csv", version)
+comuni_variations <- read.csv(filename)
+
+filename <- sprintf("open_csv_%s_events.csv", version)
+events <- read.csv(filename)
+
+any(!!comuni_variations$event_num %in% events$event_num)
+```
+
+    ## [1] TRUE
+
+Relationship: one-to-many on `event_num`.
+
+#### `open_csv_20190601_comuni_variations.csv` – `open_csv_20190601_event_change_code.csv`
+
+``` r
+filename <- sprintf("open_csv_%s_event_change_code.csv", version)
+event_change_code <- read.csv(filename)
+
+nrow(merge(comuni_variations[comuni_variations$event_type == "change_code",],
+           event_change_code, 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "change_code")
+```
+
+    ## [1] TRUE
+
+Relationship: one-to-one on `sistat_id`, `event_num`.
+
+#### `open_csv_20190601_comuni_variations.csv` – `open_csv_20190601_event_change_name.csv`
+
+``` r
+filename <- sprintf("open_csv_%s_event_change_name.csv", version)
+event_change_name <- read.csv(filename)
+
+nrow(merge(comuni_variations[comuni_variations$event_type == "change_name",],
+           event_change_name, 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "change_name")
+```
+
+    ## [1] TRUE
+
+Relationship: one-to-one on `sistat_id`, `event_num`.
+
+#### `open_csv_20190601_comuni_variations.csv` – `open_csv_20190601_event_change_part_of.csv`
+
+``` r
+filename <- sprintf("open_csv_%s_event_change_part_of.csv", version)
+event_change_part_of <- read.csv(filename)
+
+nrow(merge(comuni_variations[comuni_variations$event_type == "change_part_of",],
+           event_change_part_of, 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "change_part_of")
+```
+
+    ## [1] TRUE
+
+Relationship: one-to-one on `sistat_id`, `event_num`.
+
+#### `open_csv_20190601_comuni_variations.csv` – `open_csv_20190601_event_creation.csv`
+
+``` r
+filename <- sprintf("open_csv_%s_event_creation.csv", version)
+event_creation <- read.csv(filename)
+
+nrow(merge(comuni_variations[comuni_variations$event_type == "creation",],
+           event_creation[!duplicated(event_creation[,1:2]),], 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "creation")
+```
+
+    ## [1] TRUE
+
+Relationship: one-to-many on `sistat_id`, `event_num`.
+
+#### `open_csv_20190601_comuni_variations.csv` – `open_csv_20190601_event_extinction.csv`
+
+``` r
+filename <- sprintf("open_csv_%s_event_extinction.csv", version)
+event_extinction <- read.csv(filename)
+
+nrow(merge(comuni_variations[comuni_variations$event_type == "extinction",],
+           event_extinction[!duplicated(event_extinction[,1:2]),], 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "extinction")
+```
+
+    ## [1] TRUE
+
+Relationship: one-to-many on `sistat_id`, `event_num`.
+
+#### `open_csv_20190601_comuni_variations.csv` – `open_csv_20190601_event_territory_acquisition.csv`
+
+``` r
+filename <- sprintf("open_csv_%s_event_territory_acquisition.csv", version)
+event_territory_acquisition <- read.csv(filename)
+
+nrow(merge(comuni_variations[
+  comuni_variations$event_type == "territory_acquisition",],
+           event_territory_acquisition[
+             !duplicated(event_territory_acquisition[,1:2]),], 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "territory_acquisition")
+```
+
+    ## [1] TRUE
+
+Relationship: one-to-many on `sistat_id`, `event_num`.
+
+#### `open_csv_20190601_comuni_variations.csv` – `open_csv_20190601_event_territory_cession.csv`
+
+``` r
+filename <- sprintf("open_csv_%s_event_territory_cession.csv", version)
+event_territory_cession <- read.csv(filename)
+
+nrow(merge(comuni_variations[
+  comuni_variations$event_type == "territory_cession",],
+           event_territory_cession[
+             !duplicated(event_territory_cession[,1:2]),], 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "territory_cession")
+```
+
+    ## [1] TRUE
+
+Relationship: one-to-many on `sistat_id`, `event_num`.

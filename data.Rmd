@@ -20,8 +20,9 @@ version <- "20190601"
 ## Variables
 
 * `sistat_id`: a *comune* unique ID within the dataset
-* `?(*_)istat_cod`: reference to *comune* the ISTAT code.
+* `?(*_)istat_cod`: reference to the *comune* ISTAT code.
 * `event_num`: the unique ID of an event within the dataset.
+* `event_type`: the type of event.
 
 ## Tables
 
@@ -58,6 +59,14 @@ dat <- read.csv(filename)
 ```{r}
 kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
 ```
+
+* event types:
+
+```{r}
+kable(table(dat$event_type), row.names = FALSE,
+      col.names = c("event_type", "n"))
+```
+
 
 ### Events
 
@@ -178,7 +187,7 @@ dat <- read.csv(filename)
 kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
 ```
 
-### Event: territory acquisition
+### Event: territory cession
 
 This table details the cession of territory.
 
@@ -194,3 +203,132 @@ dat <- read.csv(filename)
 ```{r}
 kable(dat[sample(1:nrow(dat), 5),], row.names = FALSE)
 ```
+
+## Data schema and integrity
+
+#### ``r sprintf("open_csv_%s_comuni_variations.csv", version)`` -- ``r sprintf("open_csv_%s_events.csv", version)``
+
+Every variation event contained in ``r sprintf("open_csv_%s_comuni_variations.csv", version)`` is described in ``r sprintf("open_csv_%s_events.csv", version)``.
+
+```{r, echo=TRUE}
+filename <- sprintf("open_csv_%s_comuni_variations.csv", version)
+comuni_variations <- read.csv(filename)
+
+filename <- sprintf("open_csv_%s_events.csv", version)
+events <- read.csv(filename)
+
+any(!!comuni_variations$event_num %in% events$event_num)
+```
+
+Relationship: one-to-many on `event_num`.
+
+#### ``r sprintf("open_csv_%s_comuni_variations.csv", version)`` -- ``r sprintf("open_csv_%s_event_change_code.csv", version)``
+
+```{r, echo = TRUE}
+filename <- sprintf("open_csv_%s_event_change_code.csv", version)
+event_change_code <- read.csv(filename)
+
+nrow(merge(comuni_variations[comuni_variations$event_type == "change_code",],
+           event_change_code, 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "change_code")
+
+```
+
+Relationship: one-to-one on `sistat_id`, `event_num`.
+
+#### ``r sprintf("open_csv_%s_comuni_variations.csv", version)`` -- ``r sprintf("open_csv_%s_event_change_name.csv", version)``
+
+```{r, echo = TRUE}
+filename <- sprintf("open_csv_%s_event_change_name.csv", version)
+event_change_name <- read.csv(filename)
+
+nrow(merge(comuni_variations[comuni_variations$event_type == "change_name",],
+           event_change_name, 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "change_name")
+```
+
+Relationship: one-to-one on `sistat_id`, `event_num`.
+
+#### ``r sprintf("open_csv_%s_comuni_variations.csv", version)`` -- ``r sprintf("open_csv_%s_event_change_part_of.csv", version)``
+
+```{r, echo = TRUE}
+filename <- sprintf("open_csv_%s_event_change_part_of.csv", version)
+event_change_part_of <- read.csv(filename)
+
+nrow(merge(comuni_variations[comuni_variations$event_type == "change_part_of",],
+           event_change_part_of, 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "change_part_of")
+```
+
+Relationship: one-to-one on `sistat_id`, `event_num`.
+
+#### ``r sprintf("open_csv_%s_comuni_variations.csv", version)`` -- ``r sprintf("open_csv_%s_event_creation.csv", version)``
+
+```{r, echo = TRUE}
+filename <- sprintf("open_csv_%s_event_creation.csv", version)
+event_creation <- read.csv(filename)
+
+nrow(merge(comuni_variations[comuni_variations$event_type == "creation",],
+           event_creation[!duplicated(event_creation[,1:2]),], 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "creation")
+```
+
+Relationship: one-to-many on `sistat_id`, `event_num`.
+
+#### ``r sprintf("open_csv_%s_comuni_variations.csv", version)`` -- ``r sprintf("open_csv_%s_event_extinction.csv", version)``
+
+```{r, echo = TRUE}
+filename <- sprintf("open_csv_%s_event_extinction.csv", version)
+event_extinction <- read.csv(filename)
+
+nrow(merge(comuni_variations[comuni_variations$event_type == "extinction",],
+           event_extinction[!duplicated(event_extinction[,1:2]),], 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "extinction")
+```
+
+Relationship: one-to-many on `sistat_id`, `event_num`.
+
+#### ``r sprintf("open_csv_%s_comuni_variations.csv", version)`` -- ``r sprintf("open_csv_%s_event_territory_acquisition.csv", version)``
+
+```{r, echo = TRUE}
+filename <- sprintf("open_csv_%s_event_territory_acquisition.csv", version)
+event_territory_acquisition <- read.csv(filename)
+
+nrow(merge(comuni_variations[
+  comuni_variations$event_type == "territory_acquisition",],
+           event_territory_acquisition[
+             !duplicated(event_territory_acquisition[,1:2]),], 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "territory_acquisition")
+```
+
+Relationship: one-to-many on `sistat_id`, `event_num`.
+
+#### ``r sprintf("open_csv_%s_comuni_variations.csv", version)`` -- ``r sprintf("open_csv_%s_event_territory_cession.csv", version)``
+
+```{r, echo = TRUE}
+filename <- sprintf("open_csv_%s_event_territory_cession.csv", version)
+event_territory_cession <- read.csv(filename)
+
+nrow(merge(comuni_variations[
+  comuni_variations$event_type == "territory_cession",],
+           event_territory_cession[
+             !duplicated(event_territory_cession[,1:2]),], 
+           by = c("sistat_id", "event_num"),
+           all = FALSE)) ==
+  sum(comuni_variations$event_type == "territory_cession")
+```
+
+Relationship: one-to-many on `sistat_id`, `event_num`.
+
