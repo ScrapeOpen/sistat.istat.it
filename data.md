@@ -22,13 +22,13 @@ dataset.
   - records: 10331
   - data example:
 
-| sistat\_id | last\_name       | last\_istat\_cod |
-| ---------: | :--------------- | ---------------: |
-|       1412 | Tovo San Giacomo |             9062 |
-|       2460 | Vercurago        |            97086 |
-|       1162 | Ricaldone        |             6143 |
-|      10967 | Morter/Morter    |            21858 |
-|       8179 | Vajont           |            93052 |
+| sistat\_id | last\_name          | last\_istat\_cod |
+| ---------: | :------------------ | ---------------: |
+|       7579 | Aidone              |            86002 |
+|       7026 | Santa Sofia d’Epiro |            78133 |
+|        711 | Ceresole Alba       |             4062 |
+|      10242 | Centemero           |            13852 |
+|       3755 | Resana              |            26066 |
 
 ### Comuni variations
 
@@ -40,13 +40,13 @@ think…).
   - records: 23075
   - data example:
 
-| sistat\_id | event\_num | event\_type        | event\_date | event\_validity\_from |
-| ---------: | ---------: | :----------------- | :---------- | :-------------------- |
-|         17 |       2364 | creation           | 1946-11-22  | 1947-01-10            |
-|      10237 |       3786 | extinction         | 1874-11-02  | NA                    |
-|       7953 |        575 | change\_part\_of   | 2001-07-12  | 2006-01-01            |
-|       4277 |       4578 | territory\_cession | 1870-05-01  | 1870-07-01            |
-|      11051 |       2767 | change\_part\_of   | 1927-01-02  | 1927-01-12            |
+| sistat\_id | event\_num | event\_type            | event\_date | event\_validity\_from |
+| ---------: | ---------: | :--------------------- | :---------- | :-------------------- |
+|       3874 |       3619 | creation               | 1866-11-04  | 1866-11-20            |
+|       7943 |       5847 | creation               | 1946-02-22  | 1946-04-13            |
+|      11387 |       4346 | territory\_acquisition | 1928-03-15  | 1928-05-02            |
+|       3332 |       3461 | creation               | 1920-09-26  | 1920-10-16            |
+|       1214 |       2948 | change\_name           | 1939-07-22  | 1939-10-21            |
 
   - event types:
 
@@ -70,11 +70,11 @@ events described in the dataset.
   - records: 8677
   - data example:
 
-| event\_num | event\_act   | event\_date | event\_description                                                                                                                                      | event\_validity\_from | event\_validity\_to |
-| ---------: | :----------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------- | :------------------ |
-|       5959 | L.R. N. 67   | 2013-11-22  | NUOVO COMUNE DI SCARPERIA E SAN PIERO COSTITUITO MEDIANTE FUSIONE DEI COMUNI DI SCARPERIA E SAN PIERO A SIEVE IN PROVINCIA DI FIRENZE                   | NA                    | 2014-01-01          |
-|       4016 | R.D. N. 1384 | 1931-10-15  | NUOVO COMUNE DI VAL DI VIZZE/PFITSCHVIENE COSTITUITO CON I TERRITORI DEI SOPPRESSI COMUNI DI VIZZE/PFITSCH E PRATI/WIESEN IN PROVINCIA DI BOLZANO/BOZEN | 1927-01-12            | 1931-12-06          |
-|       5164 | R.D. N. 840  | 1912-07-18  | NUOVA DENOMINAZIONE CAPPELLE SUL TAVO ASSUNTA DAL COMUNE DI CAPPELLE IN PROVINCIA DI TERAMO                                                             | 1912-08-24            | 1927-01-12          |
+| event\_num | event\_act   | event\_date | event\_description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | event\_validity\_from | event\_validity\_to |
+| ---------: | :----------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------- | :------------------ |
+|       4516 | R.D. N. 386  | 1933-03-23  | NUOVO COMUNE DI BORGIO VEREZZI COSTITUITO CON I TERRITORI DEI SOPPRESSI COMUNI DI BORGIO E VEREZZI IN PROVINCIA DI SAVONA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | 1927-01-12            | 1933-05-24          |
+|        101 | L.R. N. 13   | 1968-06-15  | AGGREGATI AL COMUNE DI TRENTO I TERRITORI DEI SOPPRESSI COMUNI DI BASELGA DI VEZZANO E VIGOLO BASELGA IN PROVINCIA DI TRENTO                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | 1947-01-15            | 1968-07-03          |
+|       3320 | LEGGE N. 113 | 1950-03-13  | RICOSTITUITI I COMUNI DI BULGAROGRASSO E VENIANO A SEGUITO DEL DISTACCO DEI TERRITORI DAL COMUNE DI APPIANO GENTILE; RICOSTITUITI I COMUNI DI CARUGO E DI AROSIO (PRIVO DELLA FRAZIONE BIGONCINO GIA’ CEDUTA AL COMUNE DI INVERIGO NEL 1929) A SEGUITO DEL DISTACCO DEI TERRITORI DAL SOPPRESSO COMUNE DI CARUGO AROSIO; RICOSTITUITI I COMUNI DI BARNI E MAGREGLIO A SEGUITO DEL DISTACCO DEI TERRITORI DAL COMUNE DI CIVENNA; RICOSTITUITO IL COMUNE DI BENE LARIO A SEGUITO DEL DISTACCO DEL TERRITORIO DAL COMUNE DI GRANDOLA ED UNITI; RICOSTITUITO IL COMUNE DI NOVEDRATE A SEGUITO DEL DISTACCO DEL TERRITORIO DAL SOPPRESSO COMUNE DI CARIMATE; RICOSTITUITI I COMUNI DI COLONNO, OSSUCCIO E SALA COMACINA A SEGUITO DEL DISTACCO DEI TERRITORI DAL SOPPRESSO COMUNE DI ISOLA COMACINA; RICOSTITUITI I COMUNI DI LIVO E VERCANA A SEGUITO DEL DISTACCO DEI TERRITORI DAL COMUNE DI DOMASO; RICOSTITUITO IL COMUNE DI LOCATE VARESINO A SEGUITO DEL DISTACCO DEL TERRITORIO DAL COMUNE DI SEPRIO; RICOSTITUITO IL COMUNE DI SAN NAZZARO VAL CAVARGNA A SEGUITO DEL DISTACCO DEL TERRITORIO DAL COMUNE DI SAN BARTOLOMEO VAL CAVARGNA; RICOSTITUITO IL COMUNE DI DORIO A SEGUITO DEL DISTACCO DEL TERRITORIO DAL COMUNE DI DERVIO, TUTTI IN PROVINCIA DI COMO | 1950-04-05            | NA                  |
 
 ### Event: change code
 
@@ -86,11 +86,11 @@ This table details variations in the ISTAT code.
 
 | sistat\_id | event\_num | event\_old\_istat\_cod | event\_new\_istat\_cod |
 | ---------: | ---------: | ---------------------: | ---------------------: |
-|       4143 |        300 |                  30160 |                  30116 |
-|       8022 |        302 |                  92158 |                  92095 |
-|       4075 |        300 |                  30092 |                  30064 |
-|       4063 |        300 |                  30080 |                  30055 |
-|       4105 |        300 |                  30122 |                  30087 |
+|       4052 |        300 |                  30069 |                  30045 |
+|       7892 |        302 |                  92028 |                  92011 |
+|       4070 |        300 |                  30087 |                  30061 |
+|       4038 |        300 |                  30055 |                  30036 |
+|       4028 |        300 |                  30045 |                  30029 |
 
 ### Event: change name
 
@@ -100,13 +100,13 @@ This table details variations in the name.
   - records: 2747
   - data example:
 
-| sistat\_id | event\_num | event\_new\_name       | event\_old\_name     |
-| ---------: | ---------: | :--------------------- | :------------------- |
-|      10857 |       3541 | Virle                  | Virle Treponti       |
-|       2184 |       2664 | San Zenone             | San Zenone al Lambro |
-|         64 |       2757 | Castagneto             | Castagneto Po        |
-|       5555 |       5339 | Castello di Campagnano | Castel Campagnano    |
-|       1280 |       2931 | Valtornenza            | Valtournanche        |
+| sistat\_id | event\_num | event\_old\_name | event\_new\_name     |
+| ---------: | ---------: | :--------------- | :------------------- |
+|       5308 |       4987 | Camerata         | Camerata Nuova       |
+|       9513 |       5015 | Civitella        | Civitella Licinio    |
+|       4016 |       4100 | Cavazzo          | Cavazzo Carnico      |
+|        405 |       2650 | Palazzolo        | Palazzolo Vercellese |
+|       6146 |       2681 | Pettorano        | Pettorano sul Gizio  |
 
 ### Event: change part of
 
@@ -117,13 +117,13 @@ change provice).
   - records: 5017
   - data example:
 
-| sistat\_id | event\_num | event\_new\_istat\_cod | event\_new\_province           | event\_old\_istat\_cod | event\_old\_province |
-| ---------: | ---------: | ---------------------: | :----------------------------- | ---------------------: | :------------------- |
-|       7114 |        310 |                 102018 | Vibo Valentia                  |                  79066 | Catanzaro            |
-|        164 |       6029 |                   1164 | Città metropolitana di Torino  |                   1164 | \-                   |
-|       3789 |       6029 |                  27005 | Città metropolitana di Venezia |                  27005 | \-                   |
-|       5758 |       6029 |                  63049 | Città metropolitana di Napoli  |                  63049 | \-                   |
-|       2162 |        615 |                 108037 | Monza e della Brianza          |                  15180 | \-                   |
+| sistat\_id | event\_num | event\_new\_istat\_cod | event\_new\_province                   | event\_old\_istat\_cod | event\_old\_province |
+| ---------: | ---------: | ---------------------: | :------------------------------------- | ---------------------: | :------------------- |
+|       5265 |       2767 |                  57044 | Rieti                                  |                  58905 | \-                   |
+|      10969 |       4170 |                  22675 | Trento                                 |                 802851 | \-                   |
+|       7258 |       6030 |                  80051 | Città metropolitana di Reggio Calabria |                  80051 | \-                   |
+|       7849 |        624 |                  95087 | Oristano                               |                  91087 | Nuoro                |
+|      10966 |       4170 |                  22406 | Trento                                 |                 802211 | \-                   |
 
 ### Event: event creation
 
@@ -133,13 +133,13 @@ This table details the creation event.
   - records: 4262
   - data example:
 
-| sistat\_id | event\_num | event\_from\_name       | event\_from\_istat\_cod | event\_from\_area | event\_from\_population | event\_from\_extinction\_flag |
-| ---------: | ---------: | :---------------------- | ----------------------: | :---------------- | :---------------------- | :---------------------------- |
-|       4174 |       4294 | \-                      |                      NA | NON DOCUMENTATA   | NON DOCUMENTATA         |                               |
-|       3434 |       3619 | \-                      |                      NA | NON DOCUMENTATA   | NON DOCUMENTATA         |                               |
-|       7486 |       5693 | Sant’Agata di Militello |                   83084 | NON DOCUMENTATA   | NON DOCUMENTATA         | N                             |
-|       8249 |        359 | Scandeluzza             |                    5102 | 599               | 250                     | S                             |
-|       1115 |       2927 | Molino Alzano           |                    6813 | 274               | 891                     | S                             |
+| sistat\_id | event\_num | event\_from\_name | event\_from\_istat\_cod | event\_from\_area | event\_from\_population | event\_from\_extinction\_flag |
+| ---------: | ---------: | :---------------- | ----------------------: | :---------------- | :---------------------- | :---------------------------- |
+|      11647 |       6048 | Saletto           |                   28074 | 1079              | 2869                    | S                             |
+|      11476 |       2934 | Rhêmes Notre Dame |                    7055 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
+|       1701 |       3158 | Capiago           |                   13832 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
+|       5052 |       4771 | Campagnatico      |                   53002 | 19271             | 4775                    | N                             |
+|         79 |       2412 | Cuorgnè           |                    1098 | 403               | 298                     | N                             |
 
 ### Event: event extinction
 
@@ -149,13 +149,13 @@ This table details the extinction event.
   - records: 3585
   - data example:
 
-| sistat\_id | event\_num | event\_to\_name | event\_to\_istat\_cod | event\_to\_area | event\_to\_population | event\_to\_creation\_flag |
-| ---------: | ---------: | :-------------- | --------------------: | :-------------- | :-------------------- | :------------------------ |
-|       9869 |       2535 | Varallo         |                  2156 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
-|       6852 |       5505 | Chiaromonte     |                 76028 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
-|       3218 |       3910 | Condino         |                 22066 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
-|       2652 |       3372 | Valsaviore      |                 17906 | 8241            | 2265                  | S                         |
-|      11408 |       4308 | Primano         |                701712 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
+| sistat\_id | event\_num | event\_to\_name  | event\_to\_istat\_cod | event\_to\_area | event\_to\_population | event\_to\_creation\_flag |
+| ---------: | ---------: | :--------------- | --------------------: | :-------------- | :-------------------- | :------------------------ |
+|      11472 |       3341 | Stazzona         |                 13218 | 746             | 665                   | S                         |
+|       4538 |       5956 | Poggio Torriana  |                 99028 | 1176            | 1096                  | S                         |
+|       3396 |       5993 | Porte di Rendena |                 22244 | 3496            | 760                   | S                         |
+|       8016 |       5787 | Lunamatrona      |                 92057 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
+|       9482 |       5345 | Napoli           |                 63049 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
 
 ### Event: territory acquisition
 
@@ -165,13 +165,13 @@ This table details the acquisition of territory.
   - records: 5828
   - data example:
 
-| sistat\_id | event\_num | event\_from\_name | event\_from\_istat\_cod | event\_from\_area | event\_from\_population | event\_from\_extinction\_flag |
-| ---------: | ---------: | :---------------- | ----------------------: | :---------------- | :---------------------- | :---------------------------- |
-|       5758 |       5322 | Pozzuoli          |                   63060 | NON DOCUMENTATA   | NON DOCUMENTATA         | N                             |
-|       5755 |       5398 | Sorrento          |                   63080 | NON DOCUMENTATA   | NON DOCUMENTATA         |                               |
-|      11465 |       5326 | Vitulazio         |                   63899 | 2272              | 3328                    | S                             |
-|       4180 |       4301 | Corona            |                   31802 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
-|       1444 |       4480 | Nervi             |                   10812 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
+| sistat\_id | event\_num | event\_from\_name    | event\_from\_istat\_cod | event\_from\_area | event\_from\_population | event\_from\_extinction\_flag |
+| ---------: | ---------: | :------------------- | ----------------------: | :---------------- | :---------------------- | :---------------------------- |
+|      10066 |       3679 | Dergano              |                   15869 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
+|      11603 |       6000 | Farra d’Alpago       |                   25020 | 4121              | 3037                    | S                             |
+|       2564 |       3137 | Presegno             |                   17879 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
+|       8031 |       5800 | Siamanna             |                   95809 | NON DOCUMENTATA   | NON DOCUMENTATA         | S                             |
+|       4509 |       4635 | Civitella di Romagna |                   40009 | NON DOCUMENTATA   | NON DOCUMENTATA         | N                             |
 
 ### Event: territory cession
 
@@ -181,13 +181,13 @@ This table details the cession of territory.
   - records: 2368
   - data example:
 
-| sistat\_id | event\_num | event\_to\_name | event\_to\_istat\_cod | event\_to\_area | event\_to\_population | event\_to\_creation\_flag |
-| ---------: | ---------: | :-------------- | --------------------: | :-------------- | :-------------------- | :------------------------ |
-|       1346 |       4479 | Soldano         |                  8058 | NON DOCUMENTATA | NON DOCUMENTATA       | S                         |
-|       7881 |       5853 | Las Plassas     |                 92056 | NON DOCUMENTATA | NON DOCUMENTATA       | S                         |
-|       6377 |       5207 | Buonanotte      |                 69009 | NON DOCUMENTATA | NON DOCUMENTATA       | S                         |
-|       3390 |       4052 | Soraga          |                 22176 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
-|       7311 |       5617 | Custonaci       |                 81007 | 6961            | 4410                  | S                         |
+| sistat\_id | event\_num | event\_to\_name         | event\_to\_istat\_cod | event\_to\_area | event\_to\_population | event\_to\_creation\_flag |
+| ---------: | ---------: | :---------------------- | --------------------: | :-------------- | :-------------------- | :------------------------ |
+|       4113 |        601 | Coseano                 |                 30031 | 2               |                       | N                         |
+|       2728 |       3855 | Borgarello              |                 18015 | NON DOCUMENTATA | NON DOCUMENTATA       | N                         |
+|       7890 |       5758 | Selargius               |                 92116 | NON DOCUMENTATA | NON DOCUMENTATA       | S                         |
+|        328 |         57 | Camandona               |                  2023 | NON DOCUMENTATA | 12                    | N                         |
+|       7704 |        190 | Sant’Antonio di Gallura |                 90085 | 7200            | 1492                  | S                         |
 
 ## Data schema and integrity
 
