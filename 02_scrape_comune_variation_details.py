@@ -452,8 +452,8 @@ def parseEventChangeName(event_scope):
     table_headers = parseTableHeaders(3)
     table_content = parseTableContent(3)
     event_change_name = event_scope
-    event_change_name['event_old_name'] = table_content[table_headers.index('Denominazione corrente')]
-    event_change_name['event_new_name'] = table_content[table_headers.index('Denominazione precedente')]
+    event_change_name['event_old_name'] = table_content[table_headers.index('Denominazione precedente')]
+    event_change_name['event_new_name'] = table_content[table_headers.index('Denominazione corrente')]
     enterEventChangeName(event_change_name)
     
     return
