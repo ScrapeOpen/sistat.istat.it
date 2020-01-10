@@ -16,16 +16,13 @@ open_csv_20190601_comuni <-
 colnames(open_csv_20190601_comuni) <- c('sistat_id', 'last_name', 'last_istat_cod')
 open_csv_20190601_comuni <- open_csv_20190601_comuni[order(open_csv_20190601_comuni$last_name),]
 
-event_scope <- sqliteGetTable(db2, "event_scope")
-
 open_csv_20190601_comuni_variations <- unique(event_scope[,c(1:3,5,7)])
 open_csv_20190601_comuni_variations$event_date <- 
   as.Date(open_csv_20190601_comuni_variations$event_date, "%d/%m/%Y")  
 open_csv_20190601_comuni_variations$event_validity_from <- 
   as.Date(open_csv_20190601_comuni_variations$event_validity_from, "%d/%m/%Y")  
 
-open_csv_20190601_events <- 
-  unique(event_scope[,c('event_num','event_act','event_date','event_description','event_validity_from','event_validity_to')])
+open_csv_20190601_events <- sqliteGetTable(db2, "event_scope")
 
 open_csv_20190601_events$event_date <- 
   as.Date(open_csv_20190601_events$event_date, "%d/%m/%Y")
